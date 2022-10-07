@@ -1,5 +1,5 @@
-from blueprints.simple import bp as user_bp
-from blueprints.medium import bp as medium_bp
+from blueprints.simple import bp as simple_bp
+from blueprints.simple2 import bp as simple2_bp
 from sanic import Sanic
 from pathlib import Path
 from jinja2.loaders import FileSystemLoader
@@ -13,7 +13,7 @@ app = Sanic("MyHelloWorldApp")
 from blueprints.simple import bp as user_bp
 from blueprints.medium import bp as medium_bp
 '''
-app.blueprint([user_bp, medium_bp])
+app.blueprint([simple_bp, simple2_bp])
 
 
 # Set up template files
@@ -25,7 +25,7 @@ def setup_template_env(app, _):
     )
     
 # Run Sanic
-'''
+r'''
     sanic server:app -p 7777 --debug --workers=2
     
     # Errors
